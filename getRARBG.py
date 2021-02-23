@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # coding=utf-8
+from random import random
 
 import requests
 from bs4 import BeautifulSoup
@@ -34,7 +35,7 @@ def dealMovieBasic(one):
     leechers = one.contents[5].get_text().strip()
     leechers = int(leechers) if leechers.isnumeric() else leechers
     uploader = one.contents[7].get_text().strip()
-    print("uri=%s, siz=%s, imdb=%s, <<%s>>\n" % (uri, file_size, imdb_id, title))
+    print("imdb=%s, <<%s>>, cate=%s, size=%s, uri=%s\n" % (imdb_id, title, CATEGORY["%d"%category],file_size,uri))
     # now = time.strftime("%Y-%m-%d %H:%M:%S")
     now = datetime.datetime.utcnow()
     pages.find_one_and_update({"uri": uri},
@@ -95,7 +96,7 @@ if __name__ == "__main__":
             pager_links = soup.find_all("div", id='pager_links')
             next_link = pager_links[0].find_all("a")[-1].attrs["href"]
             movie_links = soup.find_all("tr", class_='lista2')
-            time.sleep(0.8)
+            time.sleep(1.3 + random())
         else:
             movie_links = None
 

@@ -4,6 +4,8 @@ import traceback
 import pymongo
 
 DOMAIN = 'https://rarbg.to'
+#DOMAIN = 'https://rarbgprx.org'
+
 # domamin = 'http://x1.pbnmdssb.xyz'
 
 CODEPAGE = 'gbk'
@@ -36,11 +38,12 @@ PROXIES = {'http_proxy': 'http://192.168.31.98:2080',
            }
 
 Cookies = {'tcc': "",
-           'c_cookie': 'rgish6kxbw',
+           'c_cookie': 'e9a1uz0o2l',
            'gaDts48g': 'q8h5pp9t',
            'aby': '2',
-           "skt": "XMN429o6mk",
-           "gaDts48g": "q8h5pp9t"}
+           "skt": "BPTZN5c84o",
+           "gaDts48g": "q8h5pp9t",
+           "expla":4}
 
 MONGODB_CONFIG = {
     'host': '192.168.31.98',
