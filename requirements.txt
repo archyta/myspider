@@ -1,3 +1,4 @@
 beautifulsoup4==4.9.3
 pymongo==3.10.1
 requests==2.25.1
+imdbpy==2020.9.25
