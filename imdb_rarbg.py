@@ -129,7 +129,7 @@ if __name__ == "__main__":
     #query_by_imdbid("/torrents.php?imdb=tt0061839")
     query_by_imdbid("/torrents.php?imdb=tt0146455")
 
-    cursor  = imdb.find({"info_level":{"$lt": 20},"imdb_id":{"$ne":None}})
+    cursor = imdb.find({"info_level": {"$lt": 20}, "imdb_id": {"$ne": None}})
     # cursor = pages.find({"uri": '/torrent/ezg13bd'})   # for test only.
     for item in cursor:
         query_by_imdbid("/torrents.php?imdb=%s" % item["imdb_id"])

@@ -64,18 +64,15 @@ def deal_imdb(tittle_id):
 
 if __name__ == "__main__":
     # myclient = pymongo.MongoClient("mongodb://192.168.31.98:32768/")
-    movieShowDB = myclient["rarbg"]
-    last = movieShowDB["last"]
+    #movieShowDB = myclient["TSPDT"]
+    #last = movieShowDB["films"]
 
-    next_link = last.find_one({"latest": "next_page"})
-    start_url = 'https://rarbg.to/torrents.php?category=14;48;17;44;45;47;50;51;52;42;46;54;18;41;49&search=&order=data&by=ASC' if not next_link \
-        else DOMAIN + next_link["next_page"]
-    # start_url = "https://rarbg.to/torrents.php?category=2%3B18%3B41%3B49&page=3"
-    print("Page :%s" % start_url)
-    start_html = requests.get(start_url, headers=Hostreferer, cookies=Cookies, proxies=PROXIES)
+    #next_link = last.find_one({"latest": "next_page"})
+    start_url = "https://www.theyshootpictures.com/gf1000_all1000films_table.php"
+    start_html = requests.get(start_url, proxies=PROXIES)
     start_html.encoding = CODEPAGE
     soup = BeautifulSoup(start_html.text, "html.parser")
-    pager_links = soup.find_all("div", id='pager_links')
+    pager_links = soup.find_all("table", id='stacks_in_663_page60table')
     if not pager_links:
         print(soup.text)
         exit(1)

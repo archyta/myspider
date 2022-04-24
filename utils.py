@@ -4,6 +4,8 @@ import traceback
 import pymongo
 
 DOMAIN = 'https://rarbg.to'
+URL_TSPDT = 'https://www.theyshootpictures.com/gf1000_all1000films_table.php'
+
 #DOMAIN = 'https://rarbgprx.org'
 
 # domamin = 'http://x1.pbnmdssb.xyz'
@@ -38,12 +40,12 @@ PROXIES = {'http_proxy': 'http://192.168.31.98:2080',
            }
 
 Cookies = {'tcc': "",
-           'c_cookie': 'e9a1uz0o2l',
+           'c_cookie': 'rgish6kxbw',
            'gaDts48g': 'q8h5pp9t',
            'aby': '2',
-           "skt": "BPTZN5c84o",
+           "skt": "I62GUj7dks",
            "gaDts48g": "q8h5pp9t",
-           "expla":4}
+           "expla":'4'}
 
 MONGODB_CONFIG = {
     'host': '192.168.31.98',
